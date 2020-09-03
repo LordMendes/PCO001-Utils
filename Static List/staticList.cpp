@@ -3,11 +3,21 @@ using namespace std;
 
 #define SIZE 10
 
-struct Knot{
+class Knot{
 
-    char Key;
-    int Value;
+    public:
+        char Key;
+        int Value;
 
+    Knot(){
+        this->Key = NULL;
+        this->Value = NULL;
+    };
+
+    Knot(char key, int value){
+        this->Key = key;
+        this->Value = value;
+    };
 };
 
 class StaticList{
@@ -20,7 +30,7 @@ class StaticList{
 
         StaticList(){
             this->End = -1;
-        }
+        };
 
         void print(){
             cout<<endl;
@@ -83,3 +93,23 @@ class StaticList{
             return this->Data[i];
         }
 };
+
+int main(){
+
+    Knot no1('a',1);
+    Knot no2('f',1);
+    Knot no3('d',1);
+    Knot no4('c',1);
+    Knot no5('z',1);
+
+    StaticList L;
+
+    L.insertKnot(no1);
+    L.insertKnot(no2);
+    L.insertKnot(no3);
+    L.insertKnot(no4);
+    L.insertKnot(no5);
+
+    L.print();
+
+}
